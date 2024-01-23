@@ -19,7 +19,7 @@ public:
   /**
    * @brief Rectangle Make a rectangle at 0,0 with Width and Height 0.
    */
-  Rectangle(Point p1, double height, double width);
+  Rectangle(Point p1, double startHeight, double startWidth);
   /**
    * @brief Rectangle Construct rectangle using given point
    * @param p1 upper left corner and the indicated width and height.
