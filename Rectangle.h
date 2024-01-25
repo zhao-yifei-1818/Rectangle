@@ -16,6 +16,7 @@ public:
    * @brief Rectangle make a rectangle at p1 with height and width
    */
   Rectangle();
+  Rectangle(const Point& p1, double startHeight, double startWidth);
   /**
    * @brief Rectangle Make a rectangle at 0,0 with Width and Height 0.
    */
@@ -43,34 +44,34 @@ public:
    * @param yAmount Amount to move in the y direction.
    */
 
-  double getWidth();
+  double getWidth() const;
   /**
    * @brief getWidth Return the width of the rectangle.
    * @return Width of the rectangle.
    */
-  double getHeight();
+  double getHeight() const;
   /**
    * @brief getHeight Return the height of the rectangle.
    * @return Height of the rectangle.
    */
 
-  Point getUpperLeftVertex();
+  Point getUpperLeftVertex() const;
   /**
    * @brief getY Return left Vertex of rectangle.
    * @return left vertex of the rectangle
    */
-  Point getCenter();
+  Point getCenter() const;
   /**
    * @brief getY Return left Vertex of rectangle.
    * @return left vertex of the rectangle
    */
-  double getArea();
+  double getArea() const;
   /**
    * @brief getArea Calculate and return the area of the rectangle.
    * @return Area of the rectangle.
    */
 
-  double getPerimeter();
+  double getPerimeter() const;
   /**
    * @brief getPerimeter Calculate and return the perimeter of the rectangle.
    * @return Perimeter of the rectangle.
