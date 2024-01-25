@@ -32,7 +32,14 @@ TEST_CASE("Rectangle/Constructor1 - 3 Arguments")
   REQUIRE(r1.getHeight() == Approx(2));
   REQUIRE(r1.getWidth() == Approx(4));
 }
+TEST_CASE("Rectangle getArea()")
+{
+  // Build rectangle
+  Point p1(1, 5);
+  Rectangle r1(p1, 2, 4);
 
+  REQUIRE(r1.getArea() == Approx(8));
+}
 TEST_CASE("squareDifference")
 {
   // if a CHECK fails, the test case as a whole will fail, but still
