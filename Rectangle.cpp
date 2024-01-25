@@ -1,28 +1,27 @@
 #include "Rectangle.h"
-#include "Point.cpp"
-#include "Point.h"
 #include <cmath>
 
 Rectangle::Rectangle()
 {
+  // upperLeftVertex = Point.setX(0);
+  // upperLeftVertex = Point.setY(0);
   // Default constructor, setting Point as 0, height and width 0.
   height = 0;
   width = 0;
 }
 
-Rectangle::Rectangle(const Point& p1, double startHeight, double startWidth)
+Rectangle::Rectangle(Point p1, double startHeight, double startWidth)
 {
   // set point to be a copy of the given point
   upperLeftVertex = p1;
   // also set height & width to given parameter
-  int height = startHeight;
-  int width = startWidth;
+  height = startHeight;
+  width = startWidth;
 }
-// Rectangle::Rectangle(const Point& p1, const Point& p2){}
 
 void Rectangle::translate(double xAmount, double yAmount)
 {
-  upperLeftVertex = Point(xAmount, yAmount);
+  upperLeftVertex = Point(xAmount, yAmount); // needs attention
 }
 
 double Rectangle::getWidth() const

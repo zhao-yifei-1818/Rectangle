@@ -16,25 +16,12 @@ public:
    * @brief Rectangle make a rectangle at p1 with height and width
    */
   Rectangle();
-  Rectangle(const Point& p1, double startHeight, double startWidth);
-  /**
-   * @brief Rectangle Make a rectangle at 0,0 with Width and Height 0.
-   */
   Rectangle(Point p1, double startHeight, double startWidth);
   /**
    * @brief Rectangle Construct rectangle using given point
    * @param p1 upper left corner and the indicated width and height.
    * @param height Initial height of rectangle.
    * @param width Initial width of rectangle.
-   */
-  Rectangle(Point p1, Point p2);
-  /**
-   * @brief Rectangle Construct rectangle using topleft and botright. The two
-   * points might not be in order as upperLeft and lowerRight. The constructor
-   * should figure out appropriate coordinates to use for its state based on
-   * coordinates of these two points.
-   * @param p1 upper left corner
-   * @param p2 bottom right corner
    */
   void translate(double xAmount, double yAmount);
   /**

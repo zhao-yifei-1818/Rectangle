@@ -1,4 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#define NOGDI
+#include "Rectangle.h"
 #include "doctest.h"
 
 using doctest::Approx;
@@ -11,6 +13,20 @@ int squareDifference(int a, int b)
 double distance(int x1, int y1, int x2, int y2)
 {
   return sqrt(squareDifference(x1, x2) + squareDifference(y1, y2));
+}
+TEST_CASE("Rectangle/Constructor1 - 3 Arguments")
+{
+  // Build rectangle
+  Point p1(1, 5);
+  Rectangle r1(p1, 2, 4);
+
+  // now see if it has the right info
+  Point temp = r1.getUpperLeftVertex();
+  REQUIRE(temp.isSameAs(p1) == true);
+
+  // dimensions are doubles, compare using Approx from doctest to check equality
+  REQUIRE(r1.getHeight() == Approx(2));
+  REQUIRE(r1.getWidth() == Approx(4));
 }
 
 TEST_CASE("squareDifference")
