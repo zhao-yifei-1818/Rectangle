@@ -77,7 +77,7 @@ public:
    * @return Perimeter of the rectangle.
    */
 
-  bool contains(Point p);
+  bool contains(const Point& p) const;
   /**
    * @brief contains Check if the rectangle contains the given point.
    * @param p Point to check.

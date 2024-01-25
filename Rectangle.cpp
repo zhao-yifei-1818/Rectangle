@@ -22,6 +22,7 @@ Rectangle::Rectangle(const Point& p1, double startHeight, double startWidth)
 
 void Rectangle::translate(double xAmount, double yAmount)
 {
+  upperLeftVertex = Point(xAmount, yAmount);
 }
 
 double Rectangle::getWidth() const
@@ -33,3 +34,14 @@ double Rectangle::getHeight() const
 {
   return height;
 }
+double Rectangle::getArea() const
+{
+  return width * height;
+}
+double Rectangle::getPerimeter() const
+{
+  return 2 * (width + height);
+}
+// bool contains(const Point& p) const{
+//   if (p.getX()<= upperLeftVertex && p.getY()
+// }
