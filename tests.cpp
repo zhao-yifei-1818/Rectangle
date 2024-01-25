@@ -40,6 +40,14 @@ TEST_CASE("Rectangle getArea()")
 
   REQUIRE(r1.getArea() == Approx(8));
 }
+TEST_CASE("Rectangle getPerimeter()")
+{
+  // Build rectangle
+  Point p1(1, 5);
+  Rectangle r1(p1, 2, 4);
+
+  REQUIRE(r1.getPerimeter() == Approx(12));
+}
 TEST_CASE("squareDifference")
 {
   // if a CHECK fails, the test case as a whole will fail, but still
