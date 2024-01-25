@@ -25,6 +25,8 @@ Rectangle::Rectangle(Point p1, double startHeight, double startWidth)
 
 void Rectangle::translate(double xAmount, double yAmount)
 {
+  // Our Rec's "x" is set to ("x" plus additional amount)
+  // same as y
   upperLeftVertex.setX(upperLeftVertex.getX() + xAmount);
   upperLeftVertex.setY(upperLeftVertex.getY() + yAmount);
 }
@@ -38,9 +40,16 @@ Point Rectangle::getUpperLeftVertex() const
 // return.
 Point Rectangle::getCenter() const
 {
-  Point p1;
-  p1.setX(p1.getX() - (getWidth() / 2));
-  p1.setY(p1.getY() - (getHeight() / 2));
+  Point p1; // make a point to return
+  // using member function to acccess, and modify values.
+  p1.setX(p1.getX()
+          + (getWidth()
+             / 2)); // from "x" in upper left vertex's perspective, Rectangle
+                    // center is to his right which is positive x direction.
+  p1.setY(
+      p1.getY()
+      - (getHeight() / 2)); // from "y" in upper left vertex's perspective, Rec
+                            // center is to his down (negative Y direction)
   return p1;
 }
 
@@ -61,6 +70,16 @@ double Rectangle::getPerimeter() const
 {
   return 2 * (width + height);
 }
-// bool contains(const Point& p) const{
-//   if (p.getX()<= upperLeftVertex && p.getY()
-// }
+bool Rectangle::contains(const Point& p) const
+{
+  // if p.getx() is within Domain X and X+width
+  if (p.getX() <= (upperLeftVertex.getX() + width)
+      && p.getX() >= upperLeftVertex.getX()) {
+    // and if p.getY() is within Range Y and Y-height
+    if (p.getY() <= upperLeftVertex.getY()
+        && p.getX() >= (upperLeftVertex.getY() - height))
+      return true; // If both is satisfied then Point p is inside Rectangle, Rec
+                   // contains p.
+  }
+  return false;
+}
