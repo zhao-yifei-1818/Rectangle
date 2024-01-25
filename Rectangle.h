@@ -1,7 +1,7 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 /**
- * @brief Assignment 1 Rectangle.h
+ * @brief Assignment 3
  * @name Yifei Zhao
  */
 #include "Point.h"
@@ -49,8 +49,9 @@ public:
    */
   Point getCenter() const;
   /**
-   * @brief getY Return left Vertex of rectangle.
-   * @return left vertex of the rectangle
+   * @brief Calculate location at center of rectangle, make a Point representing
+   * it to return.
+   * @return a point representing center
    */
   double getArea() const;
   /**

@@ -1,3 +1,7 @@
+/**
+ * @brief Assignment 3
+ * @name Yifei Zhao
+ */
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #define NOGDI
 #include "Rectangle.h"

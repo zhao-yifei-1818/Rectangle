@@ -1,3 +1,7 @@
+/**
+ * @brief Assignment 3
+ * @name Yifei Zhao
+ */
 #include "Rectangle.h"
 #include <cmath>
 
@@ -23,6 +27,12 @@ void Rectangle::translate(double xAmount, double yAmount)
 {
   upperLeftVertex = Point(xAmount, yAmount); // needs attention
 }
+
+// Point getUpperLeftVertex() {
+//   return upperLeftVertex;
+// }
+// Point getCenter() const{
+// }
 
 double Rectangle::getWidth() const
 {
