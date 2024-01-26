@@ -9,7 +9,6 @@ Rectangle::Rectangle()
 {
   upperLeftVertex.setX(0);
   upperLeftVertex.setY(0);
-
   // Default constructor, setting Point as 0, height and width 0.
   height = 0;
   width = 0;
