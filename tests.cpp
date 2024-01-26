@@ -44,6 +44,21 @@ TEST_CASE("Rectangle getArea()")
   REQUIRE(r2.getArea() == Approx(40));
 }
 
+TEST_CASE("getHeight()")
+{
+  // Build rectangle
+  Point p1(1, 5);
+  Rectangle r1(p1, 2, 4);
+  REQUIRE(r1.getHeight() == Approx(2));
+}
+TEST_CASE("getWidth()")
+{
+  // Build rectangle
+  Point p1(1, 5);
+  Rectangle r1(p1, 2, 4);
+  REQUIRE(r1.getWidth() == Approx(4));
+}
+
 TEST_CASE("Rectangle getCenter()")
 {
   // Build rectangle
