@@ -23,6 +23,8 @@ public:
    * @param height Initial height of rectangle.
    * @param width Initial width of rectangle.
    */
+  Rectangle(Point p1, Point p2);
+
   void translate(double xAmount, double yAmount);
   /**
    * @brief translate Move the rectangle by the given amount in x and y
