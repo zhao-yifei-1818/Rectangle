@@ -40,7 +40,7 @@ TEST_CASE("Rectangle getArea()")
   REQUIRE(r1.getArea() == Approx(8));
 
   Rectangle r2(p1, 10, 4);
-  REQUIRE(r1.getArea() == Approx(40));
+  REQUIRE(r2.getArea() == Approx(40));
 }
 TEST_CASE("Rectangle getPerimeter()")
 {
