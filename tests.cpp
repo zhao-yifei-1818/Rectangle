@@ -65,12 +65,14 @@ TEST_CASE("Rectangle getCenter()")
   Point p1(1, 5);
   Rectangle r1(p1, 2, 4);
   Point ans1(3, 4);
+  // it centeres at 3,4
   REQUIRE(r1.getCenter().getX() == ans1.getX());
   REQUIRE(r1.getCenter().getY() == ans1.getY());
 
   Point p2(0, 0);
   Rectangle r2(p2, 2, 4);
   Point ans2(2, -1);
+  // test if negative works, it centeres at 2,-1
   REQUIRE(r2.getCenter().getX() == ans2.getX());
   REQUIRE(r2.getCenter().getY() == ans2.getY());
 }
@@ -80,26 +82,27 @@ TEST_CASE("Rectangle getPerimeter()")
   // Build rectangle
   Point p1(1, 5);
   Rectangle r1(p1, 2, 4);
+  REQUIRE(r1.getPerimeter()
+          == Approx(12)); // Height4,width2, makes perimeter of 12
 
-  REQUIRE(r1.getPerimeter() == Approx(12));
   Point p2(0, 0);
-  Rectangle r2(p2, 0, 4);
-
-  REQUIRE(r2.getPerimeter() == Approx(8));
+  Rectangle r2(p2, 0, 4); // case 0
+  REQUIRE(r2.getPerimeter()
+          == Approx(8)); // width4, height0, makes perimeter of 8
 }
 
 TEST_CASE("Rectangle translate()")
 {
   // Build rectangle
   Point p1(1, 5);
-  Rectangle r1(p1, 2, 4);
+  Rectangle r1(p1, 2, 4); // width 4, height2, upperleft vertex= 1,5
 
-  r1.translate(2, 5);
+  r1.translate(2, 5); // (1,5), (x+=2 , y+=5) == (3, 10)
   Point upperleft = r1.getUpperLeftVertex();
   REQUIRE(upperleft.getX() == Approx(3));
   REQUIRE(upperleft.getY() == Approx(10));
 
-  r1.translate(-6, -6);
+  r1.translate(-6, -6); //(3,10), (x-=6,y-=6) == (-3,4)
   upperleft = r1.getUpperLeftVertex();
   REQUIRE(upperleft.getX() == Approx(-3));
   REQUIRE(upperleft.getY() == Approx(4));
@@ -110,8 +113,7 @@ TEST_CASE("Rectangle contains() just touching")
   // Build rectangle
   Point p1(1, 5);
   Rectangle r1(p1, 2, 4);
-
-  REQUIRE(r1.contains(p1) == true);
+  REQUIRE(r1.contains(p1) == true); // case of just touching
 }
 TEST_CASE("Rectangle contains() non touching")
 {
@@ -120,9 +122,9 @@ TEST_CASE("Rectangle contains() non touching")
   Rectangle r1(p1, 2, 4); // width 4, height2, upperleft vertex= 1,5
 
   Point p2(20, 20);
-  REQUIRE(r1.contains(p2) == false);
+  REQUIRE(r1.contains(p2) == false); // case outside
   Point p3(1.1, 3.1);
-  REQUIRE(r1.contains(p3) == true);
+  REQUIRE(r1.contains(p3) == true); // case inside
 }
 
 TEST_CASE("squareDifference")
