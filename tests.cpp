@@ -32,6 +32,7 @@ TEST_CASE("Rectangle/Constructor1 - 3 Arguments")
   REQUIRE(r1.getHeight() == Approx(2));
   REQUIRE(r1.getWidth() == Approx(4));
 }
+
 TEST_CASE("Rectangle getArea()")
 {
   // Build rectangle
@@ -42,6 +43,7 @@ TEST_CASE("Rectangle getArea()")
   Rectangle r2(p1, 10, 4);
   REQUIRE(r2.getArea() == Approx(40));
 }
+
 TEST_CASE("Rectangle getCenter()")
 {
   // Build rectangle
@@ -51,6 +53,7 @@ TEST_CASE("Rectangle getCenter()")
   REQUIRE(r1.getCenter().getX() == ans1.getX());
   REQUIRE(r1.getCenter().getY() == ans1.getY());
 }
+
 TEST_CASE("Rectangle getPerimeter()")
 {
   // Build rectangle
@@ -58,7 +61,12 @@ TEST_CASE("Rectangle getPerimeter()")
   Rectangle r1(p1, 2, 4);
 
   REQUIRE(r1.getPerimeter() == Approx(12));
+  Point p2(0, 0);
+  Rectangle r2(p2, 2, 4);
+
+  REQUIRE(r2.getPerimeter() == Approx(0));
 }
+
 TEST_CASE("Rectangle contains()")
 {
   // Build rectangle
@@ -69,6 +77,7 @@ TEST_CASE("Rectangle contains()")
   Point p2(20, 20);
   REQUIRE(r1.contains(p2) == false);
 }
+
 TEST_CASE("squareDifference")
 {
   // if a CHECK fails, the test case as a whole will fail, but still
