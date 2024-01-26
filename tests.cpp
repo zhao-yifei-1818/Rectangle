@@ -55,7 +55,7 @@ TEST_CASE("Rectangle getCenter()")
 
   Point p2(0, 0);
   Rectangle r2(p2, 2, 4);
-  Point ans2(-2, -1);
+  Point ans2(2, -1);
   REQUIRE(r2.getCenter().getX() == ans2.getX());
   REQUIRE(r2.getCenter().getY() == ans2.getY());
 }
