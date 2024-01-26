@@ -52,6 +52,12 @@ TEST_CASE("Rectangle getCenter()")
   Point ans1(3, 4);
   REQUIRE(r1.getCenter().getX() == ans1.getX());
   REQUIRE(r1.getCenter().getY() == ans1.getY());
+
+  Point p2(0, 0);
+  Rectangle r2(p2, 2, 4);
+  Point ans2(-2, -1);
+  REQUIRE(r2.getCenter().getX() == ans2.getX());
+  REQUIRE(r2.getCenter().getY() == ans2.getY());
 }
 
 TEST_CASE("Rectangle getPerimeter()")
