@@ -9,8 +9,6 @@ Rectangle::Rectangle()
 {
   upperLeftVertex.setX(0);
   upperLeftVertex.setY(0);
-  lowerRightVertex.setX(0);
-  lowerRightVertex.setY(0);
 
   // Default constructor, setting Point as 0, height and width 0.
   height = 0;
@@ -24,15 +22,6 @@ Rectangle::Rectangle(Point p1, double startHeight, double startWidth)
   // also set height & width to given parameter
   height = startHeight;
   width = startWidth;
-  lowerRightVertex.setX(p1.getX() + width);
-  lowerRightVertex.setY(p1.getY() - height);
-}
-Rectangle::Rectangle(Point p1, Point p2)
-{
-  // set point to be a copy of the given point
-  upperLeftVertex = p1;
-  // also set height & width to given parameter
-  lowerRightVertex = p2;
 }
 
 void Rectangle::translate(double xAmount, double yAmount)
