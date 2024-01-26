@@ -116,7 +116,7 @@ TEST_CASE("Rectangle contains() non touching")
 
   Point p2(20, 20);
   REQUIRE(r1.contains(p2) == false);
-  Point p3(1.5, 5.5);
+  Point p3(1.1, 3.1);
   REQUIRE(r1.contains(p3) == true);
 }
 
