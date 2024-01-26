@@ -77,7 +77,7 @@ bool Rectangle::contains(const Point& p) const
       && p.getX() >= upperLeftVertex.getX()) {
     // and if p.getY() is within Range Y and Y-height
     if (p.getY() <= upperLeftVertex.getY()
-        && p.getX() >= (upperLeftVertex.getY() - height))
+        && p.getY() >= (upperLeftVertex.getY() - height))
       return true; // If both is satisfied then Point p is inside Rectangle, Rec
                    // contains p.
   }
