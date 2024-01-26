@@ -70,7 +70,7 @@ TEST_CASE("Rectangle getPerimeter()")
   Point p2(0, 0);
   Rectangle r2(p2, 0, 4);
 
-  REQUIRE(r2.getPerimeter() == Approx(0));
+  REQUIRE(r2.getPerimeter() == Approx(8));
 }
 
 TEST_CASE("Rectangle contains()")
