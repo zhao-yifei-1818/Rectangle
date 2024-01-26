@@ -98,6 +98,11 @@ TEST_CASE("Rectangle translate()")
   Point upperleft = r1.getUpperLeftVertex();
   REQUIRE(upperleft.getX() == Approx(3));
   REQUIRE(upperleft.getY() == Approx(10));
+
+  r1.translate(-6, -6);
+  Point upperleft = r1.getUpperLeftVertex();
+  REQUIRE(upperleft.getX() == Approx(-3));
+  REQUIRE(upperleft.getY() == Approx(4));
 }
 
 TEST_CASE("Rectangle contains() just touching")
