@@ -42,14 +42,13 @@ Point Rectangle::getCenter() const
 {
   Point p1; // make a point to return
   // using member function to acccess, and modify values.
-  p1.setX(p1.getX()
-          + (getWidth()
-             / 2)); // from "x" in upper left vertex's perspective, Rectangle
-                    // center is to his right which is positive x direction.
-  p1.setY(
-      p1.getY()
-      - (getHeight() / 2)); // from "y" in upper left vertex's perspective, Rec
-                            // center is to his down (negative Y direction)
+  p1.setX(
+      upperLeftVertex.getX()
+      + (width / 2)); // from "x" in upper left vertex's perspective, Rectangle
+                      // center is to his right which is positive x direction.
+  p1.setY(upperLeftVertex.getY()
+          - (height / 2)); // from "y" in upper left vertex's perspective, Rec
+                           // center is to his down (negative Y direction)
   return p1;
 }
 
