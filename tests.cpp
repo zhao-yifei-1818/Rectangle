@@ -92,12 +92,9 @@ TEST_CASE("Rectangle translate()")
   // Build rectangle
   Point p1(1, 5);
   Rectangle r1(p1, 2, 4);
-
-  REQUIRE(r1.getPerimeter() == Approx(12));
-  Point p2(0, 0);
-  Rectangle r2(p2, 0, 4);
-
-  REQUIRE(r2.getPerimeter() == Approx(8));
+  r1.translate(2, 5);
+  REQUIRE(upperLeftVertex.getX() == Approx(3));
+  REQUIRE(upperLeftVertex.getY() == Approx(10));
 }
 
 TEST_CASE("Rectangle contains() just touching")
@@ -112,7 +109,7 @@ TEST_CASE("Rectangle contains() non touching")
 {
   // Build rectangle
   Point p1(1, 5);
-  Rectangle r1(p1, 2, 4);
+  Rectangle r1(p1, 2, 4); // width 4, height2, upperleft vertex= 1,5
 
   Point p2(20, 20);
   REQUIRE(r1.contains(p2) == false);
