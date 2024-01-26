@@ -115,8 +115,9 @@ TEST_CASE("Rectangle contains() non touching")
   Rectangle r1(p1, 2, 4);
 
   Point p2(20, 20);
-  Point p3(1.5, 4.5);
   REQUIRE(r1.contains(p2) == false);
+  Point p3(1.5, 5.5);
+  REQUIRE(r1.contains(p3) == true);
 }
 
 TEST_CASE("squareDifference")
