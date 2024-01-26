@@ -33,17 +33,6 @@ TEST_CASE("Rectangle/Constructor1 - 3 Arguments")
   REQUIRE(r1.getWidth() == Approx(4));
 }
 
-TEST_CASE("Rectangle getArea()")
-{
-  // Build rectangle
-  Point p1(1, 5);
-  Rectangle r1(p1, 2, 4);
-  REQUIRE(r1.getArea() == Approx(8));
-
-  Rectangle r2(p1, 10, 4);
-  REQUIRE(r2.getArea() == Approx(40));
-}
-
 TEST_CASE("getHeight()")
 {
   // Build rectangle
@@ -57,6 +46,17 @@ TEST_CASE("getWidth()")
   Point p1(1, 5);
   Rectangle r1(p1, 2, 4);
   REQUIRE(r1.getWidth() == Approx(4));
+}
+
+TEST_CASE("Rectangle getArea()")
+{
+  // Build rectangle
+  Point p1(1, 5);
+  Rectangle r1(p1, 2, 4);
+  REQUIRE(r1.getArea() == Approx(8));
+
+  Rectangle r2(p1, 10, 4);
+  REQUIRE(r2.getArea() == Approx(40));
 }
 
 TEST_CASE("Rectangle getCenter()")
@@ -87,15 +87,35 @@ TEST_CASE("Rectangle getPerimeter()")
 
   REQUIRE(r2.getPerimeter() == Approx(8));
 }
+TEST_CASE("Rectangle translate()")
+{
+  // Build rectangle
+  Point p1(1, 5);
+  Rectangle r1(p1, 2, 4);
 
-TEST_CASE("Rectangle contains()")
+  REQUIRE(r1.getPerimeter() == Approx(12));
+  Point p2(0, 0);
+  Rectangle r2(p2, 0, 4);
+
+  REQUIRE(r2.getPerimeter() == Approx(8));
+}
+
+TEST_CASE("Rectangle contains() just touching")
 {
   // Build rectangle
   Point p1(1, 5);
   Rectangle r1(p1, 2, 4);
 
   REQUIRE(r1.contains(p1) == true);
+}
+TEST_CASE("Rectangle contains() non touching")
+{
+  // Build rectangle
+  Point p1(1, 5);
+  Rectangle r1(p1, 2, 4);
+
   Point p2(20, 20);
+  Point p3(1.5, 4.5);
   REQUIRE(r1.contains(p2) == false);
 }
 
