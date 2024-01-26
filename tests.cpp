@@ -42,6 +42,15 @@ TEST_CASE("Rectangle getArea()")
   Rectangle r2(p1, 10, 4);
   REQUIRE(r2.getArea() == Approx(40));
 }
+TEST_CASE("Rectangle getCenter()")
+{
+  // Build rectangle
+  Point p1(1, 5);
+  Rectangle r1(p1, 2, 4);
+  Point ans1(2, 3);
+  REQUIRE(r1.getCenter().getX() == ans1.getX());
+  REQUIRE(r1.getCenter().getY() == ans1.getY());
+}
 TEST_CASE("Rectangle getPerimeter()")
 {
   // Build rectangle
