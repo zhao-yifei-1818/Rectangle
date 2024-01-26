@@ -37,8 +37,10 @@ TEST_CASE("Rectangle getArea()")
   // Build rectangle
   Point p1(1, 5);
   Rectangle r1(p1, 2, 4);
-
   REQUIRE(r1.getArea() == Approx(8));
+
+  Rectangle r2(p1, 10, 4);
+  REQUIRE(r1.getArea() == Approx(40));
 }
 TEST_CASE("Rectangle getPerimeter()")
 {
@@ -47,6 +49,16 @@ TEST_CASE("Rectangle getPerimeter()")
   Rectangle r1(p1, 2, 4);
 
   REQUIRE(r1.getPerimeter() == Approx(12));
+}
+TEST_CASE("Rectangle contains()")
+{
+  // Build rectangle
+  Point p1(1, 5);
+  Rectangle r1(p1, 2, 4);
+
+  REQUIRE(r1.contains(p1) == true);
+  Point p2(20, 20);
+  REQUIRE(r1.contains(p2) == false);
 }
 TEST_CASE("squareDifference")
 {
