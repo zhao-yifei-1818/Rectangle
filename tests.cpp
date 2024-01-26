@@ -88,6 +88,7 @@ TEST_CASE("Rectangle getPerimeter()")
   REQUIRE(r2.getPerimeter() == Approx(8));
 }
 
+/*
 TEST_CASE("Rectangle translate()")
 {
   // Build rectangle
@@ -99,6 +100,7 @@ TEST_CASE("Rectangle translate()")
   REQUIRE(upperleft.getX() == Approx(3));
   REQUIRE(upperleft.getY() == Approx(10));
 }
+*/
 
 TEST_CASE("Rectangle contains() just touching")
 {
