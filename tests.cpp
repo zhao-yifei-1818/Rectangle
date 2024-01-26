@@ -68,7 +68,7 @@ TEST_CASE("Rectangle getPerimeter()")
 
   REQUIRE(r1.getPerimeter() == Approx(12));
   Point p2(0, 0);
-  Rectangle r2(p2, 2, 4);
+  Rectangle r2(p2, 0, 4);
 
   REQUIRE(r2.getPerimeter() == Approx(0));
 }
