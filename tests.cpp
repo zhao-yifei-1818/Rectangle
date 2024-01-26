@@ -95,7 +95,7 @@ TEST_CASE("Rectangle translate()")
   Rectangle r1(p1, 2, 4);
   r1.translate(2, 5);
   Point upperleft = r1.getUpperLeftVertex();
-  REQUIRE(upperleft.getX == Approx(3));
+  REQUIRE(upperleft.getX() == Approx(3));
   REQUIRE(upperleft.getY() == Approx(10));
 }
 
