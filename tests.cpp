@@ -18,6 +18,20 @@ double distance(int x1, int y1, int x2, int y2)
 {
   return sqrt(squareDifference(x1, x2) + squareDifference(y1, y2));
 }
+TEST_CASE("Rectangle/Constructor1 - 0 Arguments")
+{
+  // Build rectangle
+  Point p1;
+  Rectangle r1;
+
+  // now see if it has the right info
+  Point temp = r1.getUpperLeftVertex();
+  REQUIRE(temp.isSameAs(p1) == true);
+
+  // dimensions are doubles, compare using Approx from doctest to check equality
+  REQUIRE(r1.getHeight() == Approx(0));
+  REQUIRE(r1.getWidth() == Approx(0));
+}
 TEST_CASE("Rectangle/Constructor1 - 3 Arguments")
 {
   // Build rectangle
@@ -53,10 +67,10 @@ TEST_CASE("Rectangle getArea()")
   // Build rectangle
   Point p1(1, 5);
   Rectangle r1(p1, 2, 4);
-  REQUIRE(r1.getArea() == Approx(8));
+  REQUIRE(r1.getArea() == Approx(8)); // w*h = 2*4 = 8
 
   Rectangle r2(p1, 10, 4);
-  REQUIRE(r2.getArea() == Approx(40));
+  REQUIRE(r2.getArea() == Approx(40)); // w*h = 10*4 = 40
 }
 
 TEST_CASE("Rectangle getCenter()")
